@@ -1,0 +1,106 @@
+/*Cascade style sheet*/
+/*Vinculacion externa- (Es la mas usada)-Se vincula el archivo html con uno de css para que sepa desde donde tomar los estilos que querramos aplicar.*/
+
+<link href="css/estilos.css" rel="stylesheet"> /*Se coloca dentro del head. En el href se coloca la ruta donde se encuentra el archivo de css que contiene la info y en rel se pone siempre stylesheet.*/
+
+/*Selectores ID*/
+
+<h3 id="saludo">¡Hola!</h3> /*Desde HTML-Selector ID- va a atrapar al elemento HTML que tenga asignado el atributo id*/
+
+#saludo{                    /*Para llamarlo desde el css usamos el #seguido del nombre del ID*/
+
+    color:red;
+}
+
+/*Selectores de clase*/
+
+/*Este selector va a trapar al elemento HTML que tenga asignado el atributo CLASS. A un mismo elemento podemos asignarle la cantidad de clases que queramos, separandolas con un espacio*/
+
+<h1 class="titulo noticias">Noticias</h1> /*Así se lo llama en HTML*/
+
+.titulo{
+
+    font-size:22px;         /*Para llamarlo desde css se coloca un punto seguido de la palabra que usamos dentro de la clase*/
+}
+
+
+/*Selectores de Etiqueta*/
+/*Este selector va a atrapar al elemento HTML con el mismo nombre de etiqueta que llamemos desde nuestro css*/
+
+<p>Párrafo uno</p>   
+
+
+p{                  /*Para llamarlo desde css usamos elnombre de la etiqueta*/
+
+    color:gray;
+}
+
+/*Selectores combinados*/
+
+/*Estos selectores afectan el/los elemento/s que cumplan con todas las condiciones  que establezca*/
+
+<h2 class="subtitulo">Subtítulos</h2>
+
+h2.subtitulo{                   /*El elemento h2 que tenga asignada la clase subtitulo*/
+
+    color:gray;
+}
+
+/*Selectores descendentes*/
+
+/*Estos selectores sirven para agregar especificidad. En el ejemplo vamos a atrapar al elemento li que esté dentro del ul con el id lista.*/
+
+<ul id="lista">
+
+<li>Primer ítem</li>
+
+</ul>
+
+
+ul#saludo li{
+
+    text-align:center;
+}
+
+/*Para llamarlos desde el css escribimos los selectores separados por un espacio (esto indica paternidad)*/
+
+
+
+/*Reglas de css*/
+
+body{
+
+    background-color:purple;/**/
+    font-family:'Times New Roman', Times, serif;
+    font-size:normal;
+    font-weight:200;
+    text-decoration: underline;
+    text-align:center;
+    line-height: 20px;/**/
+
+}
+
+/*Reglas y formatos de color*/
+
+h2{
+
+    color:purple;
+    color:#454345;
+    background-color: rgb(12,34,32);
+    opacity: 0.5; /*El valor representa el porcentaje de opacidad que le queremos dar al elemento*/
+
+}
+
+/*Fondos de Imagen*/
+
+body{
+
+    background-image:url('.../img/bici.jpg');
+    background-repeat: repeat-x;
+    background-position: right-bottom;
+    background-attachment: fixed;
+    background-size:130px;
+    background-color:red;
+    
+}
+

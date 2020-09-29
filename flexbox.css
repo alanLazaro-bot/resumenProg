@@ -1,0 +1,132 @@
+/*Flexbox*/
+
+.contenedor-padre{
+ 
+    display:flex;/*Esto habilita un contexto flex para trabajar con los hijos directos del elemento. Tambien puede recibir el valor inline-flex*/
+
+    flex-wrap:wrap;/*Sirve para aclararle al contenedor que debe respetar el ancho definido por los hijos.
+                    Tambien puede recibir los valores nowrap y wrap-reverse*/
+
+    flex-direction: row; /*Esto hace que los items inicien en el main axis de izquierda a derecha.*/
+    flex-direction: row-reverse; /* Otro valores  row-reverse que hace que se ordenen de izquierda a derecha.*/
+    flex-direction: column;/*Con el valor column se ordenan de arriba hacia abajo.*/
+    flex-direction: column-reverse; /*column-reverse hace que se ordenen de abajo hacia arriba.*/
+
+
+    justify-content:flex-start; /*los items se alinean respecto del inicio del main axis que hayamos definido*/
+    justify-content:flex-end; /*los items se alinean  respecto del final del main axis que hayamos definido*/
+    justify-content:center; /*Los items se alinean en el centro del main axis*/
+    justify-content:space-between; /*Los items se distribuyen de manera uniforme*/
+    justify-content: space-around;/*Los items se distribuyen de manera uniforme con igual espacio 
+                                     alrededor de cada  uno*/
+    align-items: stretch;/*permite alinear los items en funcion del cross axis. Los items se ajustan para abarcar todo el contenedor. Si el cross axis es vertical , se ajustan en funcion de la columna. En cambio si es horizontal , se ajustan  en funcion de la fila.*/ 
+    align-items: flex-start;/*Los items se alinean al inicio del eje transversal*/
+    align-items: flex-end;/*Los items se alinean al final del eje transversal */
+    align-items: center; /*Los items se alinean en el centro del eje transversal*/                           
+
+}
+@media (max-width:500px){
+
+/*Esto sirve para aplicar ciertas condiciones dependiendo en el dispositivo en el que se vea al poder controlar
+lo que sucede dependiendo de la medida que pongamos como limite.
+Esto se puede combinar con el flex-direction:row para cambiar el formato dependiendo del tamaño.*/
+
+}
+
+
+/*items*/
+/*darle el orden deseado a un flex item*/
+
+/*Los items inician en valor 0 que es el valor que tiene por default en html*/
+.item02{
+
+    order:1;/*En caso de haber por ej 4 items y asignarle un order 1 al segundo item
+            el sistema lo enviará al final del ordenamiento ya que es de menor a mayor*/
+            /*Se pueden utilizar numeros negativos tambien*/
+
+            flex-grow: 1;/*Esta propiedad hace que un item ocupe el espacio sobrante en un area
+                        determinada de trabajo cuando existe un sobrante*/
+                        /*Si se asigna esta propidad a diferentes items*/
+            align-self: flex-start;/*Alinea el item de manera individual al inicio del cross axis*/
+            align-self: flex-end;/*Alinea el item de manera individual al final del cross axis*/
+            align-self: center;/*Alinea el item de manera individual al centro del cross axis*/
+            align-self: stretch;/*Hace que el item ocupe todo el espacio transversal disponible*/
+
+}
+
+/*Position*/
+
+/*Superposicion de elementos o pequeños movimientos 
+Existen 5 propiedades
+top
+bottom
+left
+right
+position*/
+/*No se recomienda utulizar como primera opcion ya que puede generar problemas al cambiar el tamaño de la pantalla en la que estamos viendo nuestra web*/
+
+.elemento1{
+
+ position:absolute;/*Permite mover un objeto de su   posicion original a otra a partir de una referencia (bordes originales del sitio web)*/
+/*Es importante entender que el elemento deja de ser reconocido por los otros elementos por lo que este debajo de él por lo que va a hacer que pase a ocupar el lugar que tenia previamente. Toma como referencia
+la posicion con respecto al body*/
+/*Considerar tambien que si queremos hacer que no tome el body como marco general debemos hacer a la propiedad padre como relative*/
+position:relative; /*Hace que el objeto se desplace de su posicion original pero sin dejar de ocupar ese espacio del resto de los elementos
+Toma como referencia su propia posicion*/
+position:fixed; /*Hace lo mismo que position absolute solo que el elemento
+se va a quedar fijo en la posicion que le indiquemos. por ejemplo una barra de navegacion fija en la web*/
+
+top:5px; /*mueve al elemento 5pixeles hacia arriba*/
+bottom:5px; /*mueve al elemento 5pixeles hacia abajo*/
+left:5px; /*mueve al elemento 5pixeles hacia la izquierda*/
+right:5px;/*mueve al elemento 5pixeles hacia la derecha*/
+
+/*Si se utilizan estos elementos solos se toma un costado como referencia
+y el movimiento sera positivo si empujamos el elemento y negativo
+si tiramos de él*/
+z-index:10 ;
+}
+
+/*Z index*/
+/*Manejo de capas para decidir que caja va mas adelante y cual atrás*/
+/*Se le asigna un valor y cuanto más grande sea, más adelante va a figurar la caja*/
+
+/*El valor necesita ir acompañado de un tipo de posicionamiento en el elemento*/
+
+
+/*Medidas Relativas*/
+/*
+Porcentajes
+Pixeles
+em- Se usan para fuentes.
+Si declaramos que el body tiene 16px como tamaño de fuente y luego aplicamos a un articulo dentro del body la medida 1em quiere decir que va a heredar el mismo tamaño de fuente que el body mientras que si ponemos 2em va a duplicarlo.
+Esto permite que podamos hacer cambios en el tamaño principal de fuente sin tener que adaptar al resto de los elmentos manteniendo siempre la proporcion.
+
+Viewport Measures: Hace referencia a la "caja invisible" de contenido dentro de un navegador.
+Se mide de 0 a 100
+vw para el ancho
+vh para el alto.
+*/
+
+@media(max-width:500px) and (orientation:landscape){ /*Portrait o landscape como orientacion agrega la condicion de que el celular se encuentre en algunas
+                                                         de esas modalidades   ademas  del maximo de pixeles*/
+
+
+}
+/*Es la forma que tenemos que generar selectores que solo apliquen
+cuando se cumpla la condicion que plantea el media. Es la forma que disponemos para separar la visualizacion en pc, celular o tablet.*/
+
+/*Dos formas de encarar el diseño de nuestra web
+
+Mobile Last
+Primero visto de un escritorio de pc y luego adaptar la pagina a un dispositivo móvil.
+
+Mobile-last
+Se prioriza el diseño en mobile para luego pasar a la adaptacion a pc.
+Es el primero que se toma en cuenta por lo general a la hora de comenzar
+a diseñar una web ya que resulta más sencillo después adaptar
+la pagina a un monitor de pc.
+
+
+
+*/

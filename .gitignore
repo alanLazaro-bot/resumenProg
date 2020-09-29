@@ -1,0 +1,3 @@
+node_modules/ 
+
+/*Este tipo de archivo se utiliza para avisarle a git que debe ignorar elementos al subir todo al repositorio.Por ejemplo en este caso se ignora la carpeta node_modules*/
